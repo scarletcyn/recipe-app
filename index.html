@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>今日なに食べる？ | レシピ提案アプリ</title>
+    <meta name="description" content="メイン食材を選ぶだけで、今日の献立候補を提案。YouTube動画リンク付きで作り方もすぐ分かる。">
+
+    <!-- PWA: マニフェスト読み込み -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- PWA: テーマカラー -->
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- PWA: iOS Safari 向け設定 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="レシピ提案">
+
+    <!-- PWA: アイコン -->
+    <!-- ※ 後で好きな画像に差し替えてください（192x192 と 512x512 の PNG を images/ に配置） -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <h1 class="logo">🍳 今日なに食べる？</h1>
+            <div class="header-actions">
+                <button id="fav-toggle" class="icon-btn" title="お気に入り">❤️ お気に入り</button>
+                <button id="random-btn" class="accent-btn" title="おまかせ">🎲 おまかせ！</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Search Bar -->
+        <section class="search-section">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="食材やレシピ名で検索…" autocomplete="off">
+            </div>
+        </section>
+
+        <!-- Ingredient Selection -->
+        <section class="ingredient-section">
+            <div class="section-header">
+                <h2>食材を選ぶ</h2>
+                <button id="clear-btn" class="text-btn">クリア</button>
+            </div>
+            <div id="ingredient-tags" class="tag-container"></div>
+        </section>
+
+        <!-- Selection Summary -->
+        <div id="selection-summary" class="selection-summary" style="display:none;">
+            <span class="summary-text"></span>
+            <button onclick="document.getElementById('clear-btn').click()" class="summary-clear">✕</button>
+        </div>
+
+        <!-- Filters -->
+        <section class="filter-section">
+            <div class="filter-group">
+                <span class="filter-label">カテゴリ</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter-cat="all">すべて</button>
+                    <button class="filter-btn" data-filter-cat="主菜">主菜</button>
+                    <button class="filter-btn" data-filter-cat="副菜">副菜</button>
+                    <button class="filter-btn" data-filter-cat="汁物">汁物</button>
+                    <button class="filter-btn" data-filter-cat="ご飯もの">ご飯もの</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">調理時間</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter-time="all">すべて</button>
+                    <button class="filter-btn" data-filter-time="10">〜10分</button>
+                    <button class="filter-btn" data-filter-time="20">〜20分</button>
+                    <button class="filter-btn" data-filter-time="30">〜30分</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipe Count -->
+        <div class="results-bar">
+            <span>検索結果: <strong id="recipe-count">0</strong></span>
+        </div>
+
+        <!-- Recipe Grid -->
+        <section id="recipe-grid" class="recipe-grid"></section>
+    </main>
+
+    <!-- Modal -->
+    <div id="recipe-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button id="modal-close" class="modal-close-btn">✕</button>
+            <div id="modal-content" class="modal-body"></div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>🍳 今日なに食べる？ &mdash; 毎日の献立をもっと楽しく</p>
+    </footer>
+
+    <script src="js/recipes.js"></script>
+    <script src="js/youtube.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- PWA: Service Worker 登録 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
