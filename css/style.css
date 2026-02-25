@@ -54,6 +54,8 @@ a {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 0 20px;
+    /* iOS PWA: ステータスバー領域を避ける */
+    padding-top: env(safe-area-inset-top, 0px);
 }
 
 .header-inner {
@@ -122,7 +124,10 @@ a {
 .main-content {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 20px 60px
+    padding: 24px 20px 60px;
+    /* iOS PWA: 左右のセーフエリア */
+    padding-left: max(20px, env(safe-area-inset-left, 20px));
+    padding-right: max(20px, env(safe-area-inset-right, 20px));
 }
 
 /* ── Search ── */
@@ -679,6 +684,8 @@ a {
 .app-footer {
     text-align: center;
     padding: 40px 20px;
+    /* iOS PWA: 下部セーフエリア */
+    padding-bottom: max(40px, env(safe-area-inset-bottom, 40px));
     color: var(--text-dim);
     font-size: .8rem;
     border-top: 1px solid var(--border)

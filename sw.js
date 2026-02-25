@@ -3,7 +3,7 @@
 // オフラインでもアプリを表示できるようにする
 // --------------------------------------------------
 
-const CACHE_NAME = 'recipe-app-v1';
+const CACHE_NAME = 'recipe-app-v2';
 
 // キャッシュ対象のファイル一覧
 const ASSETS_TO_CACHE = [
