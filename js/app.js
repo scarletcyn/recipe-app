@@ -9,6 +9,39 @@
     let favorites = JSON.parse(localStorage.getItem("recipe_favorites") || "[]");
     let showFavoritesOnly = false;
 
+    // ── 液体調味料リスト（ml併記対象） ──
+    const LIQUID_INGREDIENTS = [
+        "醤油", "みりん", "酒", "酢", "サラダ油", "ごま油", "オリーブオイル",
+        "だし汁", "鶏がらスープ", "水", "牛乳", "生クリーム", "レモン汁",
+        "ケチャップ", "ウスターソース", "オイスターソース", "ポン酢",
+        "赤ワイン", "料理酒", "めんつゆ", "ナンプラー", "豆板醤",
+        "甜面醤", "コチュジャン", "マヨネーズ", "ソース"
+    ];
+
+    /**
+     * 液体調味料の大さじ/小さじ表記にml換算を併記する
+     * 例: "大さじ2" → "大さじ2 (30ml)"
+     */
+    function formatAmountWithMl(name, amount) {
+        const isLiquid = LIQUID_INGREDIENTS.some(liq => name.includes(liq));
+        if (!isLiquid) return amount;
+
+        // 大さじ/小さじ + 数値パターンを検出
+        const pattern = /(大さじ|小さじ)(\d+\.?\d*)/g;
+        let converted = amount;
+        let hasMatch = false;
+
+        converted = amount.replace(pattern, (match, spoon, num) => {
+            hasMatch = true;
+            const mlPerUnit = spoon === '大さじ' ? 15 : 5;
+            const ml = parseFloat(num) * mlPerUnit;
+            const mlStr = Number.isInteger(ml) ? ml.toString() : ml.toFixed(1);
+            return `${match} <span class="ml-note">(${mlStr}ml)</span>`;
+        });
+
+        return hasMatch ? converted : amount;
+    }
+
     // ── DOM refs ──
     const $ = (s) => document.querySelector(s);
     const $$ = (s) => document.querySelectorAll(s);
@@ -207,7 +240,7 @@
       <div class="modal-section">
         <h3>📝 材料</h3>
         <ul class="ingredient-list">
-          ${recipe.ingredients.map((i) => `<li><span class="ing-name">${i.name}</span><span class="ing-amount">${i.amount}</span></li>`).join("")}
+          ${recipe.ingredients.map((i) => `<li><span class="ing-name">${i.name}</span><span class="ing-amount">${formatAmountWithMl(i.name, i.amount)}</span></li>`).join("")}
         </ul>
       </div>
 
@@ -253,26 +286,16 @@
         renderRecipes();
     }
 
-    // ── Random ──
+    // ── Random（条件対応） ──
     function randomPick() {
-        const all = RECIPES;
-        const pick = all[Math.floor(Math.random() * all.length)];
-        // Clear filters
-        selectedIngredients.clear();
-        searchText = "";
-        filterCategory = "all";
-        filterTime = "all";
-        showFavoritesOnly = false;
-        $("#search-input").value = "";
-        $$(".filter-btn").forEach((b) => b.classList.remove("active"));
-        $('[data-filter-cat="all"]').classList.add("active");
-        $('[data-filter-time="all"]').classList.add("active");
-        $("#fav-toggle").classList.remove("active");
-        renderIngredientTags();
-        updateSelectionSummary();
-        renderRecipes();
-        // Open the picked recipe
-        setTimeout(() => openModal(pick.id), 200);
+        const candidates = getFilteredRecipes();
+        if (candidates.length === 0) {
+            alert('条件に合うレシピがありません。条件を変更してください。');
+            return;
+        }
+        const pick = candidates[Math.floor(Math.random() * candidates.length)];
+        // Open the picked recipe (フィルタは維持)
+        openModal(pick.id);
     }
 
     // ── Events ──
@@ -324,5 +347,61 @@
             $("#fav-toggle").classList.toggle("active", showFavoritesOnly);
             renderRecipes();
         });
+
+        // ── 計量変換ツール ──
+        const measureBtn = $("#measure-tool-btn");
+        const measureModal = $("#measure-modal");
+        if (measureBtn && measureModal) {
+            measureBtn.addEventListener("click", () => {
+                measureModal.classList.add("open");
+                document.body.style.overflow = "hidden";
+            });
+            $("#measure-modal-close").addEventListener("click", closeMeasureModal);
+            measureModal.addEventListener("click", (e) => {
+                if (e.target === measureModal) closeMeasureModal();
+            });
+
+            // 変換ロジック
+            const modeRadios = $$("input[name='convert-mode']");
+            const inputVal = $("#convert-input");
+            const resultDisplay = $("#convert-result");
+
+            function doConvert() {
+                const val = parseFloat(inputVal.value);
+                if (isNaN(val) || val < 0) {
+                    resultDisplay.innerHTML = '<span class="convert-placeholder">数値を入力してください</span>';
+                    return;
+                }
+                const mode = document.querySelector('input[name="convert-mode"]:checked').value;
+                let html = '';
+                if (mode === 'spoon-to-ml') {
+                    html = `
+                        <div class="convert-row"><span>大さじ ${val}</span><span class="convert-arrow">→</span><span class="convert-val">${(val * 15).toFixed(1)} ml</span></div>
+                        <div class="convert-row"><span>小さじ ${val}</span><span class="convert-arrow">→</span><span class="convert-val">${(val * 5).toFixed(1)} ml</span></div>
+                    `;
+                } else {
+                    const tbsp = val / 15;
+                    const tsp = val / 5;
+                    html = `
+                        <div class="convert-row"><span>${val} ml</span><span class="convert-arrow">→</span><span class="convert-val">大さじ ${tbsp % 1 === 0 ? tbsp.toFixed(0) : tbsp.toFixed(2)}</span></div>
+                        <div class="convert-row"><span>${val} ml</span><span class="convert-arrow">→</span><span class="convert-val">小さじ ${tsp % 1 === 0 ? tsp.toFixed(0) : tsp.toFixed(2)}</span></div>
+                    `;
+                }
+                resultDisplay.innerHTML = html;
+            }
+
+            inputVal.addEventListener("input", doConvert);
+            modeRadios.forEach(r => r.addEventListener("change", () => {
+                // ラベル更新
+                const mode = document.querySelector('input[name="convert-mode"]:checked').value;
+                $("#convert-input-label").textContent = mode === 'spoon-to-ml' ? 'さじ数を入力' : 'ml を入力';
+                doConvert();
+            }));
+        }
+    }
+
+    function closeMeasureModal() {
+        $("#measure-modal").classList.remove("open");
+        document.body.style.overflow = "";
     }
 })();

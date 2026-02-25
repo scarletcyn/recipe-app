@@ -748,3 +748,147 @@ a {
         gap: 10px
     }
 }
+
+/* ── ml表記スタイル ── */
+.ml-note {
+    font-size: .72rem;
+    color: var(--green);
+    font-weight: 500;
+    opacity: .85;
+}
+
+/* ── 計量変換ツール ── */
+.measure-container {
+    max-width: 440px;
+}
+
+.measure-desc {
+    color: var(--text-dim);
+    font-size: .88rem;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.measure-ref {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ref-chip {
+    background: rgba(78, 205, 196, .1);
+    border: 1px solid rgba(78, 205, 196, .25);
+    color: var(--green);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.convert-mode-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.mode-label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.mode-label input[type="radio"] {
+    display: none;
+}
+
+.mode-text {
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-dim);
+    font-size: .88rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.mode-label input[type="radio"]:checked+.mode-text {
+    background: linear-gradient(135deg, var(--accent), #ff8f5e);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 2px 12px var(--accent-glow);
+}
+
+.convert-input-group {
+    margin-bottom: 20px;
+}
+
+.convert-label {
+    display: block;
+    font-size: .82rem;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+}
+
+.convert-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 1.2rem;
+    padding: 12px 16px;
+    outline: none;
+    font-family: var(--font);
+    transition: var(--transition);
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.convert-input::-webkit-outer-spin-button,
+.convert-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.convert-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.convert-result {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    min-height: 60px;
+}
+
+.convert-placeholder {
+    color: var(--text-dim);
+    font-size: .85rem;
+}
+
+.convert-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: .95rem;
+}
+
+.convert-row+.convert-row {
+    border-top: 1px solid var(--border);
+}
+
+.convert-arrow {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.convert-val {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 1.05rem;
+}

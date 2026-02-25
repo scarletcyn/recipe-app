@@ -358,7 +358,7 @@ const RECIPES = [
     },
     {
         id: "piiman_stuffed", name: "ピーマンの肉詰め", category: "主菜", mainIngredient: "ひき肉",
-        tags: ["ひき肉", "ピーマン"], time: 25, difficulty: "普通", servings: 2, image: "🫑",
+        tags: ["ひき肉", "ピーマン"], time: 25, difficulty: "普通", servings: 2, image: "🥒",
         ingredients: [{ name: "ピーマン", amount: "6個" }, { name: "合いびき肉", amount: "200g" }, { name: "玉ねぎ", amount: "1/4個" }, { name: "パン粉", amount: "大さじ2" }, { name: "卵", amount: "1/2個" }, { name: "塩こしょう", amount: "少々" }, { name: "小麦粉", amount: "適量" }, { name: "ケチャップ", amount: "大さじ2" }, { name: "ウスターソース", amount: "大さじ1" }],
         steps: ["ピーマンを半分に切り種を取り、内側に小麦粉を薄くまぶす", "ひき肉・みじん切り玉ねぎ・パン粉・卵・塩こしょうを練り混ぜる", "ピーマンに肉だねを詰める", "フライパンに油を熱し肉側を下にして焼き、蓋をして蒸し焼き8分", "ケチャップとソースを混ぜてかける"],
         youtubeQuery: "ピーマンの肉詰め リュウジ"
@@ -498,7 +498,7 @@ const RECIPES = [
     },
     {
         id: "chinjarosu", name: "青椒肉絲", category: "主菜", mainIngredient: "豚肉",
-        tags: ["豚肉", "ピーマン", "中華"], time: 15, difficulty: "普通", servings: 2, image: "🫑",
+        tags: ["豚肉", "ピーマン", "中華"], time: 15, difficulty: "普通", servings: 2, image: "🥒",
         ingredients: [{ name: "豚もも薄切り", amount: "200g" }, { name: "ピーマン", amount: "4個" }, { name: "たけのこ水煮", amount: "100g" }, { name: "醤油", amount: "大さじ1" }, { name: "オイスターソース", amount: "大さじ1" }, { name: "酒", amount: "大さじ1" }, { name: "片栗粉", amount: "小さじ1" }, { name: "ごま油", amount: "大さじ1" }],
         steps: ["豚肉・ピーマン・たけのこを細切りにする", "豚肉に酒と片栗粉で下味をつける", "フライパンにごま油を熱し豚肉を炒める", "野菜を加えて強火でさっと炒める", "醤油とオイスターソースで味付けする"],
         youtubeQuery: "青椒肉絲 リュウジ"
@@ -698,6 +698,211 @@ const RECIPES = [
         ingredients: [{ name: "にんじん", amount: "1本" }, { name: "卵", amount: "1個" }, { name: "ツナ缶", amount: "1/2缶" }, { name: "醤油", amount: "小さじ1" }, { name: "みりん", amount: "小さじ1" }, { name: "ごま油", amount: "大さじ1" }, { name: "白ごま", amount: "適量" }],
         steps: ["にんじんを細い千切りにする", "フライパンにごま油を熱しにんじんを炒める", "しんなりしたらツナと調味料を加える", "溶き卵を回しかけさっと炒め合わせる", "白ごまを振る"],
         youtubeQuery: "にんじんしりしり 簡単"
+    },
+    // ── 追加レシピ: 主菜 15品 ──
+    {
+        id: "chicken_katsu", name: "チキンカツ", category: "主菜", mainIngredient: "鶏肉",
+        tags: ["鶏肉", "揚げ物", "パン粉"], time: 25, difficulty: "普通", servings: 2, image: "🍗",
+        ingredients: [{ name: "鶏むね肉", amount: "1枚(300g)" }, { name: "塩こしょう", amount: "少々" }, { name: "小麦粉", amount: "適量" }, { name: "卵", amount: "1個" }, { name: "パン粉", amount: "適量" }, { name: "揚げ油", amount: "適量" }, { name: "キャベツ", amount: "適量" }, { name: "とんかつソース", amount: "適量" }],
+        steps: ["鶏むね肉を開いて厚さを均一にし、塩こしょうする", "小麦粉→溶き卵→パン粉の順に衣をつける", "170℃の油で5〜6分揚げる", "油を切って2分休ませてから切り分ける", "千切りキャベツとソースを添える"],
+        youtubeQuery: "チキンカツ サクサク 簡単"
+    },
+    {
+        id: "buta_kakuni", name: "豚の角煮", category: "主菜", mainIngredient: "豚肉",
+        tags: ["豚肉", "和食"], time: 90, difficulty: "本格", servings: 4, image: "🥩",
+        ingredients: [{ name: "豚バラブロック", amount: "500g" }, { name: "長ねぎ(青い部分)", amount: "1本分" }, { name: "生姜", amount: "1かけ" }, { name: "醤油", amount: "大さじ4" }, { name: "みりん", amount: "大さじ3" }, { name: "酒", amount: "大さじ3" }, { name: "砂糖", amount: "大さじ2" }, { name: "水", amount: "400ml" }, { name: "ゆで卵", amount: "4個" }],
+        steps: ["豚肉を4〜5cm角に切りフライパンで全面を焼き付ける", "鍋にたっぷりの水・ねぎ・生姜と豚肉を入れ30分下茹でする", "別の鍋に水・調味料を煮立て、下茹でした豚肉を入れる", "落し蓋をして弱火で50分煮込む", "ゆで卵を加え10分煮てから火を止め味を含ませる"],
+        youtubeQuery: "豚の角煮 トロトロ"
+    },
+    {
+        id: "niku_miso_itame", name: "なすと豚肉の味噌炒め", category: "主菜", mainIngredient: "なす",
+        tags: ["なす", "豚肉", "味噌"], time: 15, difficulty: "簡単", servings: 2, image: "🍆",
+        ingredients: [{ name: "なす", amount: "2本" }, { name: "豚バラ薄切り", amount: "150g" }, { name: "ピーマン", amount: "2個" }, { name: "味噌", amount: "大さじ1.5" }, { name: "みりん", amount: "大さじ1" }, { name: "砂糖", amount: "小さじ1" }, { name: "醤油", amount: "小さじ1" }, { name: "ごま油", amount: "大さじ1" }],
+        steps: ["なすを乱切り、ピーマンを一口大に切る", "フライパンにごま油を熱し豚肉を炒める", "なすとピーマンを加えて炒める", "味噌・みりん・砂糖・醤油を合わせて加え、全体に絡める"],
+        youtubeQuery: "なす 豚肉 味噌炒め"
+    },
+    {
+        id: "saba_shioyake", name: "鯖の塩焼き", category: "主菜", mainIngredient: "鯖",
+        tags: ["鯖", "魚"], time: 15, difficulty: "簡単", servings: 2, image: "🐟",
+        ingredients: [{ name: "鯖の切り身", amount: "2切れ" }, { name: "塩", amount: "少々" }, { name: "大根おろし", amount: "適量" }, { name: "すだち", amount: "1個" }],
+        steps: ["鯖に塩を振り10分置き、水気を拭き取る", "魚焼きグリルで中火で両面を焼く（片面5分ずつ）", "大根おろしとすだちを添える"],
+        youtubeQuery: "鯖の塩焼き グリル"
+    },
+    {
+        id: "ebi_mayo", name: "エビマヨ", category: "主菜", mainIngredient: "海老",
+        tags: ["海老", "マヨネーズ", "中華"], time: 20, difficulty: "普通", servings: 2, image: "🦐",
+        ingredients: [{ name: "むきエビ", amount: "200g" }, { name: "片栗粉", amount: "大さじ2" }, { name: "マヨネーズ", amount: "大さじ3" }, { name: "ケチャップ", amount: "大さじ1" }, { name: "練乳", amount: "大さじ1" }, { name: "レモン汁", amount: "小さじ1" }, { name: "サラダ油", amount: "大さじ3" }, { name: "レタス", amount: "2枚" }],
+        steps: ["エビに塩と片栗粉で下処理し水洗いする", "水気を拭いて片栗粉をまぶす", "フライパンに油を熱しエビを揚げ焼きにする", "マヨネーズ・ケチャップ・練乳・レモン汁を混ぜたソースで和える", "レタスを敷いた器に盛る"],
+        youtubeQuery: "エビマヨ リュウジ"
+    },
+    {
+        id: "toridango_nabe", name: "鶏だんご鍋", category: "主菜", mainIngredient: "鶏肉",
+        tags: ["鶏肉", "ひき肉", "白菜", "鍋"], time: 30, difficulty: "普通", servings: 3, image: "🍲",
+        ingredients: [{ name: "鶏ひき肉", amount: "300g" }, { name: "白菜", amount: "1/4個" }, { name: "長ねぎ", amount: "1本" }, { name: "にんじん", amount: "1/2本" }, { name: "しめじ", amount: "1パック" }, { name: "卵", amount: "1個" }, { name: "片栗粉", amount: "大さじ1" }, { name: "生姜", amount: "1かけ" }, { name: "だし汁", amount: "800ml" }, { name: "醤油", amount: "大さじ2" }, { name: "みりん", amount: "大さじ1" }, { name: "塩", amount: "少々" }],
+        steps: ["ひき肉に卵・片栗粉・おろし生姜・塩を加え練り混ぜる", "白菜・にんじん・しめじを食べやすく切る", "鍋にだし汁を沸かし醤油・みりんで味付け", "鶏だんごをスプーンで丸めて鍋に落とす", "野菜を加えて蓋をし火が通るまで煮る"],
+        youtubeQuery: "鶏だんご鍋 簡単"
+    },
+    {
+        id: "hora_steak", name: "豚肉のステーキ風", category: "主菜", mainIngredient: "豚肉",
+        tags: ["豚肉", "にんにく"], time: 15, difficulty: "簡単", servings: 2, image: "🥩",
+        ingredients: [{ name: "豚ロース厚切り", amount: "2枚" }, { name: "にんにく", amount: "2かけ" }, { name: "塩こしょう", amount: "少々" }, { name: "醤油", amount: "大さじ1" }, { name: "バター", amount: "15g" }, { name: "みりん", amount: "大さじ1" }],
+        steps: ["豚肉の筋を切り塩こしょうする", "フライパンにスライスにんにくを弱火で焼いてチップにし取り出す", "同じフライパンで豚肉を両面こんがり焼く", "醤油・みりん・バターを加えて絡める", "にんにくチップをのせる"],
+        youtubeQuery: "豚ロース ステーキ にんにく"
+    },
+    {
+        id: "saikyo_yaki", name: "鮭の西京焼き", category: "主菜", mainIngredient: "鮭",
+        tags: ["鮭", "魚", "味噌"], time: 20, difficulty: "普通", servings: 2, image: "🐟",
+        ingredients: [{ name: "鮭の切り身", amount: "2切れ" }, { name: "白味噌", amount: "大さじ3" }, { name: "みりん", amount: "大さじ1" }, { name: "酒", amount: "大さじ1" }, { name: "砂糖", amount: "小さじ1" }],
+        steps: ["白味噌・みりん・酒・砂糖を混ぜて味噌床を作る", "鮭に味噌床を塗りラップで包んで一晩漬ける", "味噌を軽くぬぐい、魚焼きグリルで弱中火で焼く", "焦げやすいので注意しながら両面焼く"],
+        youtubeQuery: "鮭 西京焼き 簡単"
+    },
+    {
+        id: "teppan_naporitan", name: "鉄板ナポリタン", category: "主菜", mainIngredient: "豚肉",
+        tags: ["豚肉", "卵", "麺"], time: 20, difficulty: "普通", servings: 2, image: "🍳",
+        ingredients: [{ name: "スパゲッティ", amount: "200g" }, { name: "ウインナー", amount: "4本" }, { name: "玉ねぎ", amount: "1/2個" }, { name: "ピーマン", amount: "2個" }, { name: "ケチャップ", amount: "大さじ5" }, { name: "バター", amount: "15g" }, { name: "卵", amount: "2個" }, { name: "牛乳", amount: "大さじ1" }, { name: "塩こしょう", amount: "少々" }],
+        steps: ["パスタを茹で、具材を切って炒めケチャップで味付け", "卵と牛乳を混ぜて薄焼き卵を作る", "鉄板(フライパン)に卵を敷きナポリタンをのせる"],
+        youtubeQuery: "鉄板ナポリタン 卵"
+    },
+    {
+        id: "buta_nira_tamago", name: "豚肉とニラの卵炒め", category: "主菜", mainIngredient: "豚肉",
+        tags: ["豚肉", "卵", "にら"], time: 10, difficulty: "簡単", servings: 2, image: "🥩",
+        ingredients: [{ name: "豚こま切れ肉", amount: "150g" }, { name: "ニラ", amount: "1束" }, { name: "卵", amount: "3個" }, { name: "醤油", amount: "大さじ1" }, { name: "オイスターソース", amount: "大さじ1/2" }, { name: "塩こしょう", amount: "少々" }, { name: "ごま油", amount: "大さじ1" }],
+        steps: ["ニラを4cm幅に切る", "卵を溶いて先にふんわり炒めて取り出す", "ごま油で豚肉を炒め色が変わったらニラを加える", "醤油・オイスターソースで味付けし卵を戻す"],
+        youtubeQuery: "豚肉 ニラ 卵 炒め"
+    },
+    {
+        id: "kakuni_daikon", name: "豚バラ大根", category: "主菜", mainIngredient: "大根",
+        tags: ["豚肉", "大根", "和食"], time: 30, difficulty: "簡単", servings: 2, image: "🥘",
+        ingredients: [{ name: "豚バラ薄切り", amount: "200g" }, { name: "大根", amount: "1/3本" }, { name: "醤油", amount: "大さじ2" }, { name: "みりん", amount: "大さじ2" }, { name: "酒", amount: "大さじ1" }, { name: "砂糖", amount: "大さじ1" }, { name: "水", amount: "200ml" }, { name: "ごま油", amount: "大さじ1" }, { name: "ねぎ", amount: "少々" }],
+        steps: ["大根を1cm厚のいちょう切りにする", "フライパンにごま油を熱し豚肉を炒める", "大根を加えて炒め、調味料と水を加える", "落し蓋をして中弱火で20分煮る", "汁気が少なくなったらねぎを散らす"],
+        youtubeQuery: "豚バラ大根 リュウジ"
+    },
+    {
+        id: "tori_teriyaki_mayo", name: "照り焼きチキンマヨ", category: "主菜", mainIngredient: "鶏肉",
+        tags: ["鶏肉", "マヨネーズ"], time: 20, difficulty: "簡単", servings: 2, image: "🍗",
+        ingredients: [{ name: "鶏もも肉", amount: "1枚(300g)" }, { name: "醤油", amount: "大さじ2" }, { name: "みりん", amount: "大さじ2" }, { name: "酒", amount: "大さじ1" }, { name: "砂糖", amount: "大さじ1" }, { name: "マヨネーズ", amount: "適量" }, { name: "サラダ油", amount: "少々" }],
+        steps: ["鶏肉の厚みを均一にし塩こしょうする", "フライパンで皮目からこんがり焼く", "調味料を加えて照り焼きにする", "切り分けてマヨネーズをかける"],
+        youtubeQuery: "照り焼きチキン マヨネーズ"
+    },
+    {
+        id: "gyudon", name: "牛丼", category: "ご飯もの", mainIngredient: "牛肉",
+        tags: ["牛肉", "玉ねぎ", "丼"], time: 20, difficulty: "簡単", servings: 2, image: "🍚",
+        ingredients: [{ name: "牛薄切り肉", amount: "250g" }, { name: "玉ねぎ", amount: "1個" }, { name: "醤油", amount: "大さじ3" }, { name: "みりん", amount: "大さじ2" }, { name: "酒", amount: "大さじ2" }, { name: "砂糖", amount: "大さじ1.5" }, { name: "だし汁", amount: "150ml" }, { name: "生姜", amount: "1かけ" }, { name: "ご飯", amount: "2杯分" }, { name: "紅しょうが", amount: "適量" }],
+        steps: ["玉ねぎを薄切りにする", "鍋にだし汁・調味料を煮立て玉ねぎを加えてしんなりさせる", "牛肉をほぐしながら加えアクを取る", "5分ほど煮てご飯にのせる", "紅しょうがを添える"],
+        youtubeQuery: "牛丼 簡単 本格"
+    },
+    {
+        id: "tori_mizutaki", name: "鶏の水炊き", category: "主菜", mainIngredient: "鶏肉",
+        tags: ["鶏肉", "白菜", "鍋"], time: 40, difficulty: "普通", servings: 3, image: "🍲",
+        ingredients: [{ name: "鶏もも肉", amount: "400g" }, { name: "白菜", amount: "1/4個" }, { name: "長ねぎ", amount: "1本" }, { name: "豆腐", amount: "1/2丁" }, { name: "にんじん", amount: "1/2本" }, { name: "しめじ", amount: "1パック" }, { name: "水", amount: "1000ml" }, { name: "酒", amount: "大さじ2" }, { name: "塩", amount: "小さじ1" }, { name: "ポン酢", amount: "適量" }],
+        steps: ["鶏肉を一口大に切り湯通しして臭みを取る", "鍋に水・酒・鶏肉を入れ弱火で20分煮てだしを取る", "アクを丁寧に取り塩で調味", "野菜と豆腐を加えて火が通るまで煮る", "ポン酢で食べる"],
+        youtubeQuery: "水炊き 簡単"
+    },
+    {
+        id: "nikumaki_onigiri", name: "肉巻きおにぎり", category: "ご飯もの", mainIngredient: "豚肉",
+        tags: ["豚肉", "ご飯"], time: 20, difficulty: "普通", servings: 4, image: "🍙",
+        ingredients: [{ name: "ご飯", amount: "2杯分" }, { name: "豚バラ薄切り", amount: "8枚" }, { name: "醤油", amount: "大さじ2" }, { name: "みりん", amount: "大さじ2" }, { name: "砂糖", amount: "大さじ1" }, { name: "白ごま", amount: "適量" }, { name: "サラダ油", amount: "少々" }],
+        steps: ["ご飯を小さめの俵型に握る", "豚肉を巻きつける", "フライパンに油を熱し巻き終わりから焼く", "転がしながら全面焼き、調味料を加えて煮絡める", "白ごまを振る"],
+        youtubeQuery: "肉巻きおにぎり 簡単"
+    },
+    // ── 追加レシピ: 副菜 15品 ──
+    {
+        id: "hakusai_ohitashi", name: "白菜のおひたし", category: "副菜", mainIngredient: "白菜",
+        tags: ["白菜", "和食"], time: 10, difficulty: "簡単", servings: 2, image: "🥬",
+        ingredients: [{ name: "白菜", amount: "3枚" }, { name: "だし汁", amount: "大さじ3" }, { name: "醤油", amount: "大さじ1" }, { name: "かつお節", amount: "適量" }],
+        steps: ["白菜を茹でて冷水に取り3cm幅に切る", "水気をしっかり絞る", "だし汁と醤油で和える", "かつお節をのせる"],
+        youtubeQuery: "白菜 おひたし 簡単"
+    },
+    {
+        id: "kyabetsu_cole", name: "コールスロー", category: "副菜", mainIngredient: "キャベツ",
+        tags: ["キャベツ", "にんじん"], time: 10, difficulty: "簡単", servings: 3, image: "🥗",
+        ingredients: [{ name: "キャベツ", amount: "1/4個" }, { name: "にんじん", amount: "1/3本" }, { name: "コーン缶", amount: "大さじ3" }, { name: "マヨネーズ", amount: "大さじ2" }, { name: "酢", amount: "大さじ1" }, { name: "砂糖", amount: "小さじ1" }, { name: "塩こしょう", amount: "少々" }],
+        steps: ["キャベツとにんじんを千切りにし塩もみして水気を絞る", "マヨネーズ・酢・砂糖を混ぜたドレッシングで和える", "コーンを加えて混ぜる"],
+        youtubeQuery: "コールスロー 簡単"
+    },
+    {
+        id: "nasu_agebitashi", name: "揚げなす", category: "副菜", mainIngredient: "なす",
+        tags: ["なす", "和食"], time: 15, difficulty: "簡単", servings: 2, image: "🍆",
+        ingredients: [{ name: "なす", amount: "3本" }, { name: "だし汁", amount: "150ml" }, { name: "醤油", amount: "大さじ1.5" }, { name: "みりん", amount: "大さじ1" }, { name: "おろし生姜", amount: "少々" }, { name: "揚げ油", amount: "適量" }, { name: "ねぎ", amount: "少々" }],
+        steps: ["なすを縦半分に切り皮に切り込みを入れる", "170℃の油で揚げる", "だし汁・醤油・みりん・生姜を合わせた浸し汁に漬ける", "ねぎを散らす"],
+        youtubeQuery: "揚げなす 浸し"
+    },
+    {
+        id: "gobo_salad", name: "ごぼうサラダ", category: "副菜", mainIngredient: "ごぼう",
+        tags: ["ごぼう", "にんじん"], time: 15, difficulty: "簡単", servings: 3, image: "🥕",
+        ingredients: [{ name: "ごぼう", amount: "1本" }, { name: "にんじん", amount: "1/3本" }, { name: "マヨネーズ", amount: "大さじ2" }, { name: "醤油", amount: "小さじ1" }, { name: "酢", amount: "小さじ1" }, { name: "すりごま", amount: "大さじ1" }],
+        steps: ["ごぼうを細い千切りにし酢水にさらす", "にんじんも千切りにする", "沸騰した湯で2分茹でざるにあげる", "マヨネーズ・醤油・酢・すりごまで和える"],
+        youtubeQuery: "ごぼうサラダ 簡単"
+    },
+    {
+        id: "agedashi_tofu", name: "揚げ出し豆腐", category: "副菜", mainIngredient: "豆腐",
+        tags: ["豆腐", "揚げ物", "和食"], time: 20, difficulty: "普通", servings: 2, image: "🧈",
+        ingredients: [{ name: "木綿豆腐", amount: "1丁" }, { name: "片栗粉", amount: "適量" }, { name: "揚げ油", amount: "適量" }, { name: "だし汁", amount: "200ml" }, { name: "醤油", amount: "大さじ1" }, { name: "みりん", amount: "大さじ1" }, { name: "おろし生姜", amount: "少々" }, { name: "大根おろし", amount: "適量" }, { name: "ねぎ", amount: "少々" }],
+        steps: ["豆腐を水切りし一口大に切る", "片栗粉をまぶして170℃で揚げる", "だし汁・醤油・みりんを温めてつゆを作る", "揚げた豆腐を器に盛りつゆをかける", "大根おろし・生姜・ねぎを添える"],
+        youtubeQuery: "揚げ出し豆腐 リュウジ"
+    },
+    {
+        id: "tamagotoji", name: "豆腐の卵とじ", category: "副菜", mainIngredient: "豆腐",
+        tags: ["豆腐", "卵"], time: 10, difficulty: "簡単", servings: 2, image: "🥚",
+        ingredients: [{ name: "木綿豆腐", amount: "1/2丁" }, { name: "卵", amount: "2個" }, { name: "だし汁", amount: "100ml" }, { name: "醤油", amount: "大さじ1" }, { name: "みりん", amount: "大さじ1" }, { name: "三つ葉", amount: "適量" }],
+        steps: ["豆腐を一口大に切る", "小鍋にだし汁・醤油・みりんを煮立て豆腐を入れる", "2分煮たら溶き卵を回しかける", "半熟で火を止め蓋をして1分蒸らす", "三つ葉を散らす"],
+        youtubeQuery: "豆腐 卵とじ 簡単"
+    },
+    {
+        id: "hourensou_goma", name: "ほうれん草のごま和え", category: "副菜", mainIngredient: "ほうれん草",
+        tags: ["ほうれん草", "ごま"], time: 10, difficulty: "簡単", servings: 2, image: "🥬",
+        ingredients: [{ name: "ほうれん草", amount: "1束" }, { name: "すりごま", amount: "大さじ2" }, { name: "醤油", amount: "大さじ1" }, { name: "砂糖", amount: "小さじ1" }, { name: "だし汁", amount: "大さじ1" }],
+        steps: ["ほうれん草を30秒茹で冷水に取る", "水気を絞って3cm幅に切る", "すりごま・醤油・砂糖・だし汁を混ぜる", "ほうれん草を和える"],
+        youtubeQuery: "ほうれん草 ごま和え 基本"
+    },
+    {
+        id: "satsumaimo_nimono", name: "さつまいもの甘煮", category: "副菜", mainIngredient: "さつまいも",
+        tags: ["さつまいも", "和食"], time: 20, difficulty: "簡単", servings: 3, image: "🍠",
+        ingredients: [{ name: "さつまいも", amount: "1本" }, { name: "砂糖", amount: "大さじ2" }, { name: "みりん", amount: "大さじ1" }, { name: "醤油", amount: "小さじ1" }, { name: "水", amount: "200ml" }],
+        steps: ["さつまいもを2cm厚の輪切りにし水にさらす", "鍋に水・砂糖・みりん・醤油を煮立てる", "さつまいもを入れ落し蓋をして弱火で15分煮る", "竹串が通れば火を止め冷ましながら味を含ませる"],
+        youtubeQuery: "さつまいも 甘煮 簡単"
+    },
+    {
+        id: "ninjin_shirishiri", name: "にんじんとちくわのきんぴら", category: "副菜", mainIngredient: "にんじん",
+        tags: ["にんじん", "ちくわ"], time: 10, difficulty: "簡単", servings: 2, image: "🥕",
+        ingredients: [{ name: "にんじん", amount: "1本" }, { name: "ちくわ", amount: "2本" }, { name: "醤油", amount: "大さじ1" }, { name: "みりん", amount: "大さじ1" }, { name: "ごま油", amount: "大さじ1" }, { name: "白ごま", amount: "適量" }],
+        steps: ["にんじんを細切り、ちくわを薄切りにする", "フライパンにごま油を熱しにんじんを炒める", "ちくわを加えてさっと炒める", "醤油とみりんで味付けし白ごまを振る"],
+        youtubeQuery: "にんじん ちくわ きんぴら"
+    },
+    {
+        id: "tuna_salad", name: "ツナとわかめの和風サラダ", category: "副菜", mainIngredient: "ツナ",
+        tags: ["ツナ", "わかめ", "きゅうり"], time: 8, difficulty: "簡単", servings: 2, image: "🥗",
+        ingredients: [{ name: "ツナ缶", amount: "1缶" }, { name: "乾燥わかめ", amount: "5g" }, { name: "きゅうり", amount: "1本" }, { name: "醤油", amount: "大さじ1" }, { name: "酢", amount: "大さじ1" }, { name: "ごま油", amount: "小さじ1" }, { name: "白ごま", amount: "適量" }],
+        steps: ["わかめを水で戻し食べやすく切る", "きゅうりを薄切りにし塩もみして水気を絞る", "ツナ・わかめ・きゅうりを合わせる", "醤油・酢・ごま油で和え白ごまを振る"],
+        youtubeQuery: "ツナ わかめ サラダ"
+    },
+    {
+        id: "potato_bacon", name: "じゃがいもとベーコンの炒め物", category: "副菜", mainIngredient: "じゃがいも",
+        tags: ["じゃがいも", "ベーコン"], time: 15, difficulty: "簡単", servings: 2, image: "🥔",
+        ingredients: [{ name: "じゃがいも", amount: "2個" }, { name: "ベーコン", amount: "3枚" }, { name: "にんにく", amount: "1かけ" }, { name: "塩こしょう", amount: "少々" }, { name: "バター", amount: "10g" }, { name: "パセリ", amount: "少々" }],
+        steps: ["じゃがいもを細切りにし水にさらす", "フライパンにバターとにんにくを熱する", "水気を切ったじゃがいもとベーコンを炒める", "塩こしょうで味付けしパセリを散らす"],
+        youtubeQuery: "じゃがいも ベーコン 炒め"
+    },
+    {
+        id: "marinated_paprika", name: "パプリカのマリネ", category: "副菜", mainIngredient: "ピーマン",
+        tags: ["ピーマン", "酢"], time: 10, difficulty: "簡単", servings: 2, image: "🥒",
+        ingredients: [{ name: "パプリカ(赤・黄)", amount: "各1個" }, { name: "オリーブオイル", amount: "大さじ2" }, { name: "酢", amount: "大さじ2" }, { name: "砂糖", amount: "小さじ1" }, { name: "塩", amount: "少々" }],
+        steps: ["パプリカを細切りにする", "オリーブオイル・酢・砂糖・塩を合わせてマリネ液を作る", "パプリカをマリネ液に漬ける", "冷蔵庫で30分以上冷やす"],
+        youtubeQuery: "パプリカ マリネ 簡単"
+    },
+    {
+        id: "komatsuna_age", name: "小松菜と油揚げの煮浸し", category: "副菜", mainIngredient: "小松菜",
+        tags: ["小松菜", "油揚げ", "和食"], time: 10, difficulty: "簡単", servings: 2, image: "🥬",
+        ingredients: [{ name: "小松菜", amount: "1束" }, { name: "油揚げ", amount: "1枚" }, { name: "だし汁", amount: "200ml" }, { name: "醤油", amount: "大さじ1" }, { name: "みりん", amount: "大さじ1" }],
+        steps: ["小松菜を4cm幅に切り油揚げは短冊切りにする", "鍋にだし汁・醤油・みりんを煮立てる", "油揚げと小松菜の茎を先に入れ1分煮る", "葉を加えてさっと煮る"],
+        youtubeQuery: "小松菜 油揚げ 煮浸し"
+    },
+    {
+        id: "gyusuji_nikomi", name: "こんにゃくの白和え", category: "副菜", mainIngredient: "こんにゃく",
+        tags: ["こんにゃく", "豆腐", "和食"], time: 15, difficulty: "簡単", servings: 2, image: "🥣",
+        ingredients: [{ name: "こんにゃく", amount: "1/2枚" }, { name: "にんじん", amount: "1/3本" }, { name: "ほうれん草", amount: "1/2束" }, { name: "木綿豆腐", amount: "1/2丁" }, { name: "白すりごま", amount: "大さじ2" }, { name: "砂糖", amount: "小さじ2" }, { name: "醤油", amount: "小さじ1" }, { name: "塩", amount: "少々" }],
+        steps: ["豆腐をキッチンペーパーで包みしっかり水切りする", "こんにゃくとにんじんを細切りにして下茹でする", "ほうれん草を茹でて切り水気を絞る", "豆腐をつぶし白ごま・砂糖・醤油・塩を混ぜて和え衣を作る", "野菜を和え衣で和える"],
+        youtubeQuery: "白和え 簡単"
     }
 ];
 

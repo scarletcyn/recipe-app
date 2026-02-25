@@ -36,6 +36,7 @@
         <div class="header-inner">
             <h1 class="logo">🍳 今日なに食べる？</h1>
             <div class="header-actions">
+                <button id="measure-tool-btn" class="icon-btn" title="計量変換">📏 計量変換</button>
                 <button id="fav-toggle" class="icon-btn" title="お気に入り">❤️ お気に入り</button>
                 <button id="random-btn" class="accent-btn" title="おまかせ">🎲 おまかせ！</button>
             </div>
@@ -103,6 +104,42 @@
         <div class="modal-container">
             <button id="modal-close" class="modal-close-btn">✕</button>
             <div id="modal-content" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Measure Conversion Modal -->
+    <div id="measure-modal" class="modal-overlay">
+        <div class="modal-container measure-container">
+            <button id="measure-modal-close" class="modal-close-btn">✕</button>
+            <div class="modal-body">
+                <h2 class="modal-title">📏 計量変換ツール</h2>
+                <p class="measure-desc">大さじ / 小さじ と ml を相互に変換できます。</p>
+
+                <div class="measure-ref">
+                    <span class="ref-chip">大さじ1 = 15ml</span>
+                    <span class="ref-chip">小さじ1 = 5ml</span>
+                </div>
+
+                <div class="convert-mode-selector">
+                    <label class="mode-label">
+                        <input type="radio" name="convert-mode" value="spoon-to-ml" checked>
+                        <span class="mode-text">さじ → ml</span>
+                    </label>
+                    <label class="mode-label">
+                        <input type="radio" name="convert-mode" value="ml-to-spoon">
+                        <span class="mode-text">ml → さじ</span>
+                    </label>
+                </div>
+
+                <div class="convert-input-group">
+                    <label id="convert-input-label" class="convert-label">さじ数を入力</label>
+                    <input type="number" id="convert-input" class="convert-input" min="0" step="0.5" placeholder="例: 2">
+                </div>
+
+                <div id="convert-result" class="convert-result">
+                    <span class="convert-placeholder">数値を入力してください</span>
+                </div>
+            </div>
         </div>
     </div>
 
